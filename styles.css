@@ -1,0 +1,324 @@
+body{
+    background: aliceblue;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.head{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: pink;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: baseline;
+    animation: bodarmsCol 15s infinite;
+}
+
+/* was going to add shadowing to the design but decided not to
+.head::before{
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    /*y, x
+    box-shadow: inset 0px -10px 0 1px rgba(0,0,0,0.2);
+}
+*/
+
+.eyeleft, .eyeright {
+    background: black;
+    border-radius: 50%;
+    width: 27px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: eyeColBase 15s infinite;
+}
+
+.eyeleft {
+    margin-left: -50px;
+    margin-top: 30px;
+}
+
+.eyeright {
+    margin-right: -50px;
+    margin-top: 30px;
+}
+
+.eyeleft::before, .eyeright::before {
+    content: "";
+    border-radius: 50%;
+    width: 25px;
+    height: 50px;
+    position: absolute;
+    
+    /*inset x y blur-rad spread-rad color*/
+    box-shadow: inset 0px -10px 0 -1px blue;
+    animation: eyeColBot 15s infinite;
+}
+
+.eyeleft::after, .eyeright::after {
+    content: "";
+    border-radius: 50%;
+    width: 15px;
+    height: 23px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    margin-top: -20px;
+    animation: eyeColTop 15s infinite;
+}
+
+.blushleft, .blushright{
+    background: hotpink;
+    border-radius: 50%;
+    width: 27px;
+    height: 18px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: blushCol 15s infinite;
+}
+
+.blushleft {
+    margin-left: -100px;
+    margin-top: 80px;
+}
+
+.blushright {
+    margin-right: -100px;
+    margin-top: 80px;
+}
+
+.mouth {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 50%;
+    align-self: center;
+    
+    clip-path: circle(30% at 50% 100%);
+}
+
+.leftarm, .rightarm {
+    background: pink;
+    border-radius: 50%;
+    width: 45px;
+    height: 60px;
+    position: absolute;
+    display: flex;
+    animation: bodarmsCol 15s infinite;
+}
+
+.leftarm{
+    margin-left: -150px;
+    margin-top: 22px;
+    transform: rotate(115deg);
+}
+
+.rightarm{
+    margin-right: -128px;
+    transform: rotate(20deg);
+}
+
+.leftleg, .rightleg {
+    background: red;
+    border-radius: 50%;
+    width: 45px;
+    height: 60px;
+    position: absolute;
+    display: flex;
+    animation: feetCol 15s infinite;
+}
+
+.leftleg{
+    margin-left: -125px;
+    margin-top: 100px;
+    transform: rotate(40deg);
+    z-index: -2;
+}
+
+.rightleg{
+    margin-right: -110px;
+    margin-top: 100px;
+    transform: rotate(20deg);
+}
+
+@keyframes bodarmsCol {
+    from, to {
+        background: pink;
+    }
+    12.5% {
+        background: yellow;
+    }
+    25% {
+        background: lightskyblue;
+    }
+    37.5% {
+        background: red;
+    }
+    50% {
+        background: lightgreen;
+    }
+    62.5%{
+        background: gainsboro;
+    }
+    75%{
+        background: orange;
+    }
+    87.5%{
+        background: #301934;
+    }
+}
+
+@keyframes eyeColBase {
+    from, to {
+        background: black;
+    }
+    12.5% {
+        background: black;
+    }
+    25% {
+        background: black;
+    }
+    37.5% {
+        background: black;
+    }
+    50% {
+        background: black;
+    }
+    62.5%{
+        background: black;
+    }
+    75%{
+        background: black;
+    }
+    87.5%{
+        background: yellow;
+    }
+}
+
+@keyframes eyeColTop {
+    from, to {
+        background: white;
+    }
+    12.5% {
+        background: white;
+    }
+    25% {
+        background: white;
+    }
+    37.5% {
+        background: white;
+    }
+    50% {
+        background: white;
+    }
+    62.5%{
+        background: white;
+    }
+    75%{
+        background: white;
+    }
+    87.5%{
+        background: yellow;
+    }
+}
+
+@keyframes eyeColBot {
+    from, to {
+        box-shadow: inset 0px -10px 0 -1px blue;
+    }
+    12.5% {
+        box-shadow: inset 0px -10px 0 -1px blue;
+    }
+    25% {
+        box-shadow: inset 0px -10px 0 -1px blue;
+    }
+    37.5% {
+        box-shadow: inset 0px -10px 0 -1px blue;
+    }
+    50% {
+        box-shadow: inset 0px -10px 0 -1px blue;
+    }
+    62.5%{
+        box-shadow: inset 0px -10px 0 -1px dimgray;
+    }
+    75%{
+        box-shadow: inset 0px -10px 0 -1px blue;
+    }
+    87.5%{
+        box-shadow: inset 0px -10px 0 -1px yellow;
+    }
+}
+
+@keyframes feetCol {
+    from, to {
+        background: red;
+    }
+    12.5% {
+        background: darkgoldenrod;
+    }
+    25% {
+        background: blue;
+    }
+    37.5% {
+        background: purple;
+    }
+    50% {
+        background: yellow;
+    }
+    62.5%{
+        background: grey;
+    }
+    75%{
+        background: red;
+    }
+    87.5%{
+        background: mediumorchid;
+    }
+}
+
+@keyframes blushCol {
+    from, to {
+        background: hotpink;
+    }
+    12.5% {
+        background: peru;
+    }
+    25% {
+        background: blue;
+    }
+    37.5% {
+        background: purple;
+    }
+    50% {
+        background: peru;
+    }
+    62.5%{
+        background: grey;
+    }
+    75%{
+        background: red;
+    }
+    87.5%{
+        background: #301934;
+    }
+}
